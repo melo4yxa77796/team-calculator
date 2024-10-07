@@ -37,3 +37,14 @@ def divide(x, y):
 
 if __name__ == "__main__":
     main()
+
+    def get_user_input():
+      try:
+          operation = input("Enter operation (+, -, *, /): ")
+          if operation not in ['+', '-', '*', '/']:
+              raise ValueError("Invalid operation")
+          x = float(input("Enter first number: "))
+          y = float(input("Enter second number: "))
+          return operation, x, y
+      except ValueError as e:
+          print(f"Error: {e}. Please try again.")
